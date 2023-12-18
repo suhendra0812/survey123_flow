@@ -1,7 +1,7 @@
+import os
 from datetime import datetime
 
 import pywhatkit
-
 from prefect import flow
 
 
@@ -29,9 +29,12 @@ def send_message(
     """
 
     pywhatkit.sendwhatmsg_instantly(
-        phone_no="+6281322549085", message=message_body, wait_time=5
+        phone_no=os.getenv("PHONE_NUMBER"), message=message_body, wait_time=5
     )
 
 
 if __name__ == "__main__":
-    send_message.serve(name="survey123-deployment")
+    send_message.from_source(
+        source="https://github.com/suhendra0812/survey123_flow.git",
+        entrypoint="survey123_flow.py:send_message",
+    ).deploy(name="survey123-response-deploy", work_pool_name="local-subprocess")

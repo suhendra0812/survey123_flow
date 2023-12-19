@@ -1,0 +1,100 @@
+###
+### A complete description of a Prefect Deployment for flow 'survey123-flow'
+###
+name: survey123-deployment
+description: null
+version: b9ef20e3193f752a92995ff56c905ae2
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: default-agent-pool
+tags: []
+parameters: {}
+schedule: null
+is_schedule_active: true
+infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: survey123-flow
+manifest_path: null
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  _block_document_id: 4d5ddd9c-62a5-4e64-8a1b-a939b5391e7a
+  _block_document_name: anonymous-9a8b99a4-f4d5-434b-92d1-f88140e63790
+  _is_anonymous: true
+  block_type_slug: process
+  _block_type_slug: process
+storage: null
+path: E:\Development\Training\prefect\survey123_flow
+entrypoint: survey123_flow:survey123_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    incident_date:
+      title: incident_date
+      position: 0
+      type: string
+    kawasan:
+      title: kawasan
+      position: 1
+      type: string
+    jalan:
+      title: jalan
+      position: 2
+      type: string
+    detail_lokasi:
+      title: detail_lokasi
+      position: 3
+      type: string
+    judul:
+      title: judul
+      position: 4
+      type: string
+    uraian:
+      title: uraian
+      position: 5
+      type: string
+    pelapor:
+      title: pelapor
+      position: 6
+      type: string
+    pelapor_lain:
+      title: pelapor_lain
+      position: 7
+      type: string
+    attachment_url:
+      title: attachment_url
+      position: 8
+      type: string
+    attachment_name:
+      title: attachment_name
+      position: 9
+      type: string
+    token:
+      title: token
+      position: 10
+      type: string
+  required:
+  - incident_date
+  - kawasan
+  - jalan
+  - detail_lokasi
+  - judul
+  - uraian
+  - pelapor
+  - pelapor_lain
+  - attachment_url
+  - attachment_name
+  - token
+  definitions: null
+timestamp: '2023-12-19T09:01:26.851622+00:00'
+triggers: []
+enforce_parameter_schema: null
